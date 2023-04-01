@@ -1,10 +1,19 @@
 package br.com.dio.desafio.dominio;
 
+import java.util.Scanner;
+
 public class Curso extends Conteudo {
 
     private int cargaHoraria;
 
-    public Curso() {
+    public Curso(Scanner sc) {
+        super();
+        System.out.println("INFORME O NOME DO CURSO: ");
+        this.setTitulo(sc.nextLine());
+        System.out.println("INFORME UMA DESCRIÇÃO:");
+        this.setDescricao(sc.nextLine());
+        System.out.println("INFORME A CARGA HORARIA: ");
+        this.setCargaHoraria(sc.nextInt());
     }
 
 

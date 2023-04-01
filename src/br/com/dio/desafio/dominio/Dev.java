@@ -1,14 +1,16 @@
 package br.com.dio.desafio.dominio;
 
-import java.util.LinkedHashSet;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 public class Dev {
     private String nome;
     private Set<Conteudo> conteudoInscritos=new LinkedHashSet<>();
     private Set<Conteudo> conteudoConcluidos=new LinkedHashSet<>();
+
+    public Dev(Scanner sc) {
+        System.out.println("INFORME O NOME DO DEV: ");
+        this.setNome(sc.nextLine());
+    }
 
     public void inscreverBootcamp(Bootcamp bootcamp){
         this.conteudoInscritos.addAll(bootcamp.getConteudos());
@@ -33,19 +35,19 @@ public class Dev {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String nome){
+        this.nome=nome;
     }
 
-    public Set<Conteudo> getConteudoInscritos() {
+    public Set<Conteudo> getConteudosInscritos() {
         return conteudoInscritos;
     }
 
-    public void setConteudoInscritos(Set<Conteudo> conteudoInscritos) {
+    public void setConteudosInscritos(Set<Conteudo> conteudoInscritos) {
         this.conteudoInscritos = conteudoInscritos;
     }
 
-    public Set<Conteudo> getConteudoConcluidos() {
+    public Set<Conteudo> getConteudosConcluidos() {
         return conteudoConcluidos;
     }
 
@@ -64,5 +66,13 @@ public class Dev {
     @Override
     public int hashCode() {
         return Objects.hash(nome, conteudoInscritos, conteudoConcluidos);
+    }
+
+
+    public void printConteudoInscritos() {
+        System.out.println("Conteúdos Inscritos de "+this.getNome()+": "+  this.getConteudosInscritos());
+    }
+    public void printConteudoConcluidos() {
+        System.out.println("Conteúdos Concluidos de "+this.getNome()+": "+  this.getConteudosConcluidos());
     }
 }

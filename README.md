@@ -150,3 +150,12 @@ Se possível:<br>
 ------------
 
 Disponibilizado com ♥ por [cami-la](https://www.linkedin.com/in/cami-la/ "cami-la").
+
+------------
+<h1>MUDANÇAS FEITAS POR JOSÉ:</h1>
+
+🔸  foi criado método construtor para as classes Dev, Curso, Bootcamp e Mentoria;
+
+🔸  foi criado métodos para printar os conteudos que o Dev está inscrito e/ou concluiu;
+
+Com essas mudanças, ficou mais claro e menos poluído o método Principal(Main), facilitando a compreenção, bem como a manutenção.
